@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.centerPanel = new System.Windows.Forms.Panel();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.ToolPanel = new System.Windows.Forms.Panel();
             this.ContentPanel = new System.Windows.Forms.Panel();
@@ -37,9 +37,22 @@
             this.btnCloseIcon = new FontAwesome.Sharp.IconButton();
             this.btnMaxIcon = new FontAwesome.Sharp.IconButton();
             this.btnMinIcon = new FontAwesome.Sharp.IconButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.txtMarkdown = new System.Windows.Forms.RichTextBox();
             this.HeaderPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.centerPanel.SuspendLayout();
+            this.ContentPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -53,17 +66,17 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1064, 47);
             this.HeaderPanel.TabIndex = 0;
             // 
-            // panel3
+            // centerPanel
             // 
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Controls.Add(this.ContentPanel);
-            this.panel3.Controls.Add(this.ToolPanel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(254, 47);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(810, 634);
-            this.panel3.TabIndex = 2;
+            this.centerPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.centerPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.centerPanel.Controls.Add(this.ContentPanel);
+            this.centerPanel.Controls.Add(this.ToolPanel);
+            this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerPanel.Location = new System.Drawing.Point(254, 47);
+            this.centerPanel.Name = "centerPanel";
+            this.centerPanel.Size = new System.Drawing.Size(810, 634);
+            this.centerPanel.TabIndex = 2;
             // 
             // SidePanel
             // 
@@ -86,6 +99,7 @@
             // ContentPanel
             // 
             this.ContentPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ContentPanel.Controls.Add(this.splitContainer1);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.Location = new System.Drawing.Point(0, 27);
             this.ContentPanel.Name = "ContentPanel";
@@ -154,19 +168,86 @@
             this.btnMinIcon.UseVisualStyleBackColor = false;
             this.btnMinIcon.Click += new System.EventHandler(this.btnMinIcon_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Size = new System.Drawing.Size(810, 607);
+            this.splitContainer1.SplitterDistance = 270;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.txtMarkdown);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(270, 607);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.Controls.Add(this.webView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(536, 607);
+            this.panel2.TabIndex = 0;
+            // 
+            // webView
+            // 
+            this.webView.AllowExternalDrop = true;
+            this.webView.CreationProperties = null;
+            this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView.Location = new System.Drawing.Point(0, 0);
+            this.webView.Name = "webView";
+            this.webView.Size = new System.Drawing.Size(536, 607);
+            this.webView.TabIndex = 0;
+            this.webView.ZoomFactor = 1D;
+            // 
+            // txtMarkdown
+            // 
+            this.txtMarkdown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMarkdown.Location = new System.Drawing.Point(0, 0);
+            this.txtMarkdown.Name = "txtMarkdown";
+            this.txtMarkdown.Size = new System.Drawing.Size(270, 607);
+            this.txtMarkdown.TabIndex = 0;
+            this.txtMarkdown.Text = "";
+            this.txtMarkdown.TextChanged += new System.EventHandler(this.txtMarkdown_TextChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.centerPanel);
             this.Controls.Add(this.SidePanel);
             this.Controls.Add(this.HeaderPanel);
             this.Name = "Main";
             this.Text = "Noter";
             this.HeaderPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.centerPanel.ResumeLayout(false);
+            this.ContentPanel.ResumeLayout(false);
             this.utilBtnPanel.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,13 +256,18 @@
 
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Panel SidePanel;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel centerPanel;
         private System.Windows.Forms.Panel ToolPanel;
         private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Panel utilBtnPanel;
         private FontAwesome.Sharp.IconButton btnCloseIcon;
         private FontAwesome.Sharp.IconButton btnMaxIcon;
         private FontAwesome.Sharp.IconButton btnMinIcon;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView;
+        private System.Windows.Forms.RichTextBox txtMarkdown;
     }
 }
 

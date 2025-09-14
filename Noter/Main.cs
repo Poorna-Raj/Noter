@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Markdig;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace Noter
 {
@@ -32,6 +34,7 @@ namespace Noter
             this.HeaderPanel.MouseDown += HeaderPanel_MouseDown;
             //load icons
             loadIcons();
+            webView.Source = new Uri("about:blank");
         }
 
         private void HeaderPanel_MouseDown(object sender, MouseEventArgs e)
@@ -63,6 +66,36 @@ namespace Noter
         private void btnMinIcon_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtMarkdown_TextChanged(object sender, EventArgs e)
+        {
+            string markdown = txtMarkdown.Text;
+            string html = Markdown.ToHtml(markdown);
+
+            string fullHtml = $@"
+                <html>
+                <head>
+                    <meta charset='utf-8'>
+                    <style>
+                        body {{
+                            font-family: Segoe UI, sans-serif;
+                            padding: 20px;
+                        }}
+                        pre, code {{
+                            background: #f4f4f4;
+                            border-radius: 5px;
+                            padding: 2px 5px;
+                        }}
+                        h1 {{ color: darkblue; }}
+                        h2 {{ color: darkgreen; }}
+                        h3 {{ color: darkred; }}
+                    </style>
+                </head>
+                <body>{html}</body>
+                </html>";
+
+            webView.NavigateToString(fullHtml);
         }
     }
 }
