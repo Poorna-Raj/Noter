@@ -25,6 +25,8 @@ namespace Noter
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HTCAPTION = 0x2;
 
+        private string CurrentSelectedPath { get; set; } = string.Empty;
+
         public Main()
         {
             InitializeComponent();
@@ -108,10 +110,10 @@ namespace Noter
 
             if(folderBrowser.ShowDialog() == DialogResult.OK)
             {
-                string selectedPath = folderBrowser.SelectedPath;
+                CurrentSelectedPath = folderBrowser.SelectedPath;
                 
                 this.filePanel.Controls.Clear();
-                string[] mdFiles = Directory.GetFiles(selectedPath,"*.md");
+                string[] mdFiles = Directory.GetFiles(CurrentSelectedPath, "*.md");
 
                 if(mdFiles.Length <= 0)
                 {
@@ -131,6 +133,17 @@ namespace Noter
         private void Item_OnFileSelected(object sender, string filePath)
         {
             this.txtMarkdown.Text = File.ReadAllText(filePath);
+        }
+
+        private void btnNewFile_Click(object sender, EventArgs e)
+        {
+            if(this.CurrentSelectedPath == "")
+            {
+                MessageBox.Show("Path is empty");
+                return;
+            }
+
+            MessageBox.Show(CurrentSelectedPath);
         }
     }
 }

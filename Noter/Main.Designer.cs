@@ -159,6 +159,7 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.SystemColors.Desktop;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -176,25 +177,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel1.Controls.Add(this.txtMarkdown);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(270, 607);
             this.panel1.TabIndex = 0;
             // 
             // txtMarkdown
             // 
-            this.txtMarkdown.BackColor = System.Drawing.Color.DimGray;
+            this.txtMarkdown.AcceptsTab = true;
+            this.txtMarkdown.BackColor = System.Drawing.Color.Black;
             this.txtMarkdown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarkdown.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMarkdown.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarkdown.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtMarkdown.Location = new System.Drawing.Point(0, 0);
+            this.txtMarkdown.Location = new System.Drawing.Point(10, 10);
             this.txtMarkdown.Name = "txtMarkdown";
-            this.txtMarkdown.Size = new System.Drawing.Size(270, 607);
-            this.txtMarkdown.TabIndex = 0;
+            this.txtMarkdown.Size = new System.Drawing.Size(250, 587);
+            this.txtMarkdown.TabIndex = 2;
             this.txtMarkdown.Text = "";
             this.txtMarkdown.TextChanged += new System.EventHandler(this.txtMarkdown_TextChanged);
             // 
@@ -211,9 +214,9 @@
             // webView
             // 
             this.webView.AllowExternalDrop = true;
-            this.webView.BackColor = System.Drawing.Color.DimGray;
+            this.webView.BackColor = System.Drawing.Color.Black;
             this.webView.CreationProperties = null;
-            this.webView.DefaultBackgroundColor = System.Drawing.Color.DimGray;
+            this.webView.DefaultBackgroundColor = System.Drawing.Color.Black;
             this.webView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webView.ForeColor = System.Drawing.SystemColors.Control;
             this.webView.Location = new System.Drawing.Point(0, 0);
@@ -281,6 +284,7 @@
             this.btnNewFile.Size = new System.Drawing.Size(32, 27);
             this.btnNewFile.TabIndex = 1;
             this.btnNewFile.UseVisualStyleBackColor = true;
+            this.btnNewFile.Click += new System.EventHandler(this.btnNewFile_Click);
             // 
             // filePanel
             // 
