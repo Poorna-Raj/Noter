@@ -19,6 +19,12 @@ namespace Noter
             InitializeComponent();
             this.FilePath = filePath;
             lblFileName.Text = Path.GetFileName(filePath);
+
+            this.Click += FileView_Click;
+            foreach (Control ctl in this.Controls)
+            {
+                ctl.Click += FileView_Click;
+            }
         }
 
         private void FileView_Click(object sender, EventArgs e)
