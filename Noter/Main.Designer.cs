@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.centerPanel = new System.Windows.Forms.Panel();
-            this.SidePanel = new System.Windows.Forms.Panel();
-            this.ToolPanel = new System.Windows.Forms.Panel();
-            this.ContentPanel = new System.Windows.Forms.Panel();
             this.utilBtnPanel = new System.Windows.Forms.Panel();
-            this.btnCloseIcon = new FontAwesome.Sharp.IconButton();
-            this.btnMaxIcon = new FontAwesome.Sharp.IconButton();
             this.btnMinIcon = new FontAwesome.Sharp.IconButton();
+            this.btnMaxIcon = new FontAwesome.Sharp.IconButton();
+            this.btnCloseIcon = new FontAwesome.Sharp.IconButton();
+            this.centerPanel = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMarkdown = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.txtMarkdown = new System.Windows.Forms.RichTextBox();
+            this.ToolPanel = new System.Windows.Forms.Panel();
+            this.SidePanel = new System.Windows.Forms.Panel();
             this.HeaderPanel.SuspendLayout();
+            this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
             this.ContentPanel.SuspendLayout();
-            this.utilBtnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,46 +66,6 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1064, 47);
             this.HeaderPanel.TabIndex = 0;
             // 
-            // centerPanel
-            // 
-            this.centerPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.centerPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.centerPanel.Controls.Add(this.ContentPanel);
-            this.centerPanel.Controls.Add(this.ToolPanel);
-            this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centerPanel.Location = new System.Drawing.Point(254, 47);
-            this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(810, 634);
-            this.centerPanel.TabIndex = 2;
-            // 
-            // SidePanel
-            // 
-            this.SidePanel.BackColor = System.Drawing.SystemColors.Highlight;
-            this.SidePanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SidePanel.Location = new System.Drawing.Point(0, 47);
-            this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(254, 634);
-            this.SidePanel.TabIndex = 1;
-            // 
-            // ToolPanel
-            // 
-            this.ToolPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ToolPanel.Location = new System.Drawing.Point(0, 0);
-            this.ToolPanel.Name = "ToolPanel";
-            this.ToolPanel.Size = new System.Drawing.Size(810, 27);
-            this.ToolPanel.TabIndex = 0;
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ContentPanel.Controls.Add(this.splitContainer1);
-            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentPanel.Location = new System.Drawing.Point(0, 27);
-            this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(810, 607);
-            this.ContentPanel.TabIndex = 1;
-            // 
             // utilBtnPanel
             // 
             this.utilBtnPanel.Controls.Add(this.btnMinIcon);
@@ -117,22 +77,22 @@
             this.utilBtnPanel.Size = new System.Drawing.Size(103, 47);
             this.utilBtnPanel.TabIndex = 4;
             // 
-            // btnCloseIcon
+            // btnMinIcon
             // 
-            this.btnCloseIcon.BackColor = System.Drawing.SystemColors.WindowText;
-            this.btnCloseIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseIcon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCloseIcon.IconChar = FontAwesome.Sharp.IconChar._0;
-            this.btnCloseIcon.IconColor = System.Drawing.Color.White;
-            this.btnCloseIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCloseIcon.IconSize = 16;
-            this.btnCloseIcon.Location = new System.Drawing.Point(68, 3);
-            this.btnCloseIcon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnCloseIcon.Name = "btnCloseIcon";
-            this.btnCloseIcon.Size = new System.Drawing.Size(32, 41);
-            this.btnCloseIcon.TabIndex = 0;
-            this.btnCloseIcon.UseVisualStyleBackColor = false;
-            this.btnCloseIcon.Click += new System.EventHandler(this.btnCloseIcon_Click);
+            this.btnMinIcon.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnMinIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinIcon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnMinIcon.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnMinIcon.IconColor = System.Drawing.Color.White;
+            this.btnMinIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinIcon.IconSize = 16;
+            this.btnMinIcon.Location = new System.Drawing.Point(3, 4);
+            this.btnMinIcon.Name = "btnMinIcon";
+            this.btnMinIcon.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnMinIcon.Size = new System.Drawing.Size(32, 39);
+            this.btnMinIcon.TabIndex = 4;
+            this.btnMinIcon.UseVisualStyleBackColor = false;
+            this.btnMinIcon.Click += new System.EventHandler(this.btnMinIcon_Click);
             // 
             // btnMaxIcon
             // 
@@ -151,22 +111,44 @@
             this.btnMaxIcon.UseVisualStyleBackColor = false;
             this.btnMaxIcon.Click += new System.EventHandler(this.btnMaxIcon_Click);
             // 
-            // btnMinIcon
+            // btnCloseIcon
             // 
-            this.btnMinIcon.BackColor = System.Drawing.SystemColors.WindowText;
-            this.btnMinIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinIcon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMinIcon.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnMinIcon.IconColor = System.Drawing.Color.White;
-            this.btnMinIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinIcon.IconSize = 16;
-            this.btnMinIcon.Location = new System.Drawing.Point(3, 4);
-            this.btnMinIcon.Name = "btnMinIcon";
-            this.btnMinIcon.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnMinIcon.Size = new System.Drawing.Size(32, 39);
-            this.btnMinIcon.TabIndex = 4;
-            this.btnMinIcon.UseVisualStyleBackColor = false;
-            this.btnMinIcon.Click += new System.EventHandler(this.btnMinIcon_Click);
+            this.btnCloseIcon.BackColor = System.Drawing.SystemColors.WindowText;
+            this.btnCloseIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseIcon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCloseIcon.IconChar = FontAwesome.Sharp.IconChar._0;
+            this.btnCloseIcon.IconColor = System.Drawing.Color.White;
+            this.btnCloseIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCloseIcon.IconSize = 16;
+            this.btnCloseIcon.Location = new System.Drawing.Point(68, 3);
+            this.btnCloseIcon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCloseIcon.Name = "btnCloseIcon";
+            this.btnCloseIcon.Size = new System.Drawing.Size(32, 41);
+            this.btnCloseIcon.TabIndex = 0;
+            this.btnCloseIcon.UseVisualStyleBackColor = false;
+            this.btnCloseIcon.Click += new System.EventHandler(this.btnCloseIcon_Click);
+            // 
+            // centerPanel
+            // 
+            this.centerPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.centerPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.centerPanel.Controls.Add(this.ContentPanel);
+            this.centerPanel.Controls.Add(this.ToolPanel);
+            this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerPanel.Location = new System.Drawing.Point(254, 47);
+            this.centerPanel.Name = "centerPanel";
+            this.centerPanel.Size = new System.Drawing.Size(810, 634);
+            this.centerPanel.TabIndex = 2;
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ContentPanel.Controls.Add(this.splitContainer1);
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(0, 27);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(810, 607);
+            this.ContentPanel.TabIndex = 1;
             // 
             // splitContainer1
             // 
@@ -195,6 +177,20 @@
             this.panel1.Size = new System.Drawing.Size(270, 607);
             this.panel1.TabIndex = 0;
             // 
+            // txtMarkdown
+            // 
+            this.txtMarkdown.BackColor = System.Drawing.Color.DimGray;
+            this.txtMarkdown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarkdown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMarkdown.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarkdown.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtMarkdown.Location = new System.Drawing.Point(0, 0);
+            this.txtMarkdown.Name = "txtMarkdown";
+            this.txtMarkdown.Size = new System.Drawing.Size(270, 607);
+            this.txtMarkdown.TabIndex = 0;
+            this.txtMarkdown.Text = "";
+            this.txtMarkdown.TextChanged += new System.EventHandler(this.txtMarkdown_TextChanged);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -208,24 +204,34 @@
             // webView
             // 
             this.webView.AllowExternalDrop = true;
+            this.webView.BackColor = System.Drawing.Color.DimGray;
             this.webView.CreationProperties = null;
-            this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView.DefaultBackgroundColor = System.Drawing.Color.DimGray;
             this.webView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView.ForeColor = System.Drawing.SystemColors.Control;
             this.webView.Location = new System.Drawing.Point(0, 0);
             this.webView.Name = "webView";
             this.webView.Size = new System.Drawing.Size(536, 607);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
             // 
-            // txtMarkdown
+            // ToolPanel
             // 
-            this.txtMarkdown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMarkdown.Location = new System.Drawing.Point(0, 0);
-            this.txtMarkdown.Name = "txtMarkdown";
-            this.txtMarkdown.Size = new System.Drawing.Size(270, 607);
-            this.txtMarkdown.TabIndex = 0;
-            this.txtMarkdown.Text = "";
-            this.txtMarkdown.TextChanged += new System.EventHandler(this.txtMarkdown_TextChanged);
+            this.ToolPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ToolPanel.Location = new System.Drawing.Point(0, 0);
+            this.ToolPanel.Name = "ToolPanel";
+            this.ToolPanel.Size = new System.Drawing.Size(810, 27);
+            this.ToolPanel.TabIndex = 0;
+            // 
+            // SidePanel
+            // 
+            this.SidePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.SidePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SidePanel.Location = new System.Drawing.Point(0, 47);
+            this.SidePanel.Name = "SidePanel";
+            this.SidePanel.Size = new System.Drawing.Size(254, 634);
+            this.SidePanel.TabIndex = 1;
             // 
             // Main
             // 
@@ -238,9 +244,9 @@
             this.Name = "Main";
             this.Text = "Noter";
             this.HeaderPanel.ResumeLayout(false);
+            this.utilBtnPanel.ResumeLayout(false);
             this.centerPanel.ResumeLayout(false);
             this.ContentPanel.ResumeLayout(false);
-            this.utilBtnPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
