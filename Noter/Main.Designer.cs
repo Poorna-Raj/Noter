@@ -48,6 +48,8 @@
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.filePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSaveIcon = new FontAwesome.Sharp.IconButton();
+            this.btnSaveAsIcon = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteIcon = new FontAwesome.Sharp.IconButton();
             this.HeaderPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -230,6 +232,8 @@
             // ToolPanel
             // 
             this.ToolPanel.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ToolPanel.Controls.Add(this.btnDeleteIcon);
+            this.ToolPanel.Controls.Add(this.btnSaveAsIcon);
             this.ToolPanel.Controls.Add(this.btnSaveIcon);
             this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ToolPanel.Location = new System.Drawing.Point(0, 0);
@@ -301,18 +305,50 @@
             // 
             // btnSaveIcon
             // 
+            this.btnSaveIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSaveIcon.FlatAppearance.BorderSize = 0;
             this.btnSaveIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveIcon.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSaveIcon.IconColor = System.Drawing.Color.White;
             this.btnSaveIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSaveIcon.IconSize = 16;
-            this.btnSaveIcon.Location = new System.Drawing.Point(6, 0);
+            this.btnSaveIcon.Location = new System.Drawing.Point(0, 0);
             this.btnSaveIcon.Name = "btnSaveIcon";
             this.btnSaveIcon.Size = new System.Drawing.Size(32, 27);
             this.btnSaveIcon.TabIndex = 1;
             this.btnSaveIcon.UseVisualStyleBackColor = true;
             this.btnSaveIcon.Click += new System.EventHandler(this.btnSaveIcon_Click);
+            // 
+            // btnSaveAsIcon
+            // 
+            this.btnSaveAsIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSaveAsIcon.FlatAppearance.BorderSize = 0;
+            this.btnSaveAsIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveAsIcon.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSaveAsIcon.IconColor = System.Drawing.Color.White;
+            this.btnSaveAsIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveAsIcon.IconSize = 16;
+            this.btnSaveAsIcon.Location = new System.Drawing.Point(32, 0);
+            this.btnSaveAsIcon.Name = "btnSaveAsIcon";
+            this.btnSaveAsIcon.Size = new System.Drawing.Size(32, 27);
+            this.btnSaveAsIcon.TabIndex = 2;
+            this.btnSaveAsIcon.UseVisualStyleBackColor = true;
+            this.btnSaveAsIcon.Click += new System.EventHandler(this.btnSaveAsIcon_Click);
+            // 
+            // btnDeleteIcon
+            // 
+            this.btnDeleteIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDeleteIcon.FlatAppearance.BorderSize = 0;
+            this.btnDeleteIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteIcon.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDeleteIcon.IconColor = System.Drawing.Color.White;
+            this.btnDeleteIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeleteIcon.IconSize = 16;
+            this.btnDeleteIcon.Location = new System.Drawing.Point(64, 0);
+            this.btnDeleteIcon.Name = "btnDeleteIcon";
+            this.btnDeleteIcon.Size = new System.Drawing.Size(32, 27);
+            this.btnDeleteIcon.TabIndex = 3;
+            this.btnDeleteIcon.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -364,6 +400,8 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.FlowLayoutPanel filePanel;
         private FontAwesome.Sharp.IconButton btnSaveIcon;
+        private FontAwesome.Sharp.IconButton btnSaveAsIcon;
+        private FontAwesome.Sharp.IconButton btnDeleteIcon;
     }
 }
 

@@ -64,6 +64,7 @@ namespace Noter
             btnOpenFolder.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
             btnNewFile.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             btnSaveIcon.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btnSaveAsIcon.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
         }
 
         private void btnMaxIcon_Click(object sender, EventArgs e)
@@ -203,6 +204,25 @@ namespace Noter
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSaveAsIcon_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Markdown files (*.md)|*.md|All files (*.*)|*.*";
+                saveDialog.DefaultExt = "md";
+                saveDialog.FileName = "Untitled.md";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    CurrentFilePath = saveDialog.FileName;
+                    CurrentSelectedPath = Path.GetDirectoryName(saveDialog.FileName);
+
+                    File.WriteAllText(CurrentFilePath, txtMarkdown.Text);
+                    updateFileItems();
+                }
             }
         }
     }
