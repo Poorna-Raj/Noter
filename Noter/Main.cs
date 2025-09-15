@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace Noter
 {
@@ -105,6 +106,13 @@ namespace Noter
                     h3 {{ color: #c586c0; }} /* purple */
                     a  {{ color: #9cdcfe; }} /* link blue */
                     strong {{ color: #ffd700; }} /* highlight bold */
+                    /* Dark scrollbars */
+                    ::-webkit-scrollbar {{width: 10px;}}
+                    ::-webkit-scrollbar-track {{background: #1e1e1e;}}
+                    ::-webkit-scrollbar-thumb {{background: #555;
+                    border-radius: 5px;}}
+                    ::-webkit-scrollbar-thumb:hover {{background: #888;}}
+
                 </style>
                 </head>
                 <body>{html}</body>

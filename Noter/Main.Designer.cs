@@ -50,6 +50,7 @@
             this.btnSaveIcon = new FontAwesome.Sharp.IconButton();
             this.btnSaveAsIcon = new FontAwesome.Sharp.IconButton();
             this.btnDeleteIcon = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             this.HeaderPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.HeaderPanel.BackColor = System.Drawing.SystemColors.WindowText;
+            this.HeaderPanel.Controls.Add(this.label1);
             this.HeaderPanel.Controls.Add(this.utilBtnPanel);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
@@ -200,6 +202,7 @@
             this.txtMarkdown.ForeColor = System.Drawing.SystemColors.Window;
             this.txtMarkdown.Location = new System.Drawing.Point(10, 10);
             this.txtMarkdown.Name = "txtMarkdown";
+            this.txtMarkdown.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txtMarkdown.Size = new System.Drawing.Size(250, 587);
             this.txtMarkdown.TabIndex = 2;
             this.txtMarkdown.Text = "";
@@ -350,6 +353,17 @@
             this.btnDeleteIcon.TabIndex = 3;
             this.btnDeleteIcon.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(4, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Noter - Markdown Editor";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +375,7 @@
             this.Name = "Main";
             this.Text = "Noter";
             this.HeaderPanel.ResumeLayout(false);
+            this.HeaderPanel.PerformLayout();
             this.utilBtnPanel.ResumeLayout(false);
             this.centerPanel.ResumeLayout(false);
             this.ContentPanel.ResumeLayout(false);
@@ -402,6 +417,7 @@
         private FontAwesome.Sharp.IconButton btnSaveIcon;
         private FontAwesome.Sharp.IconButton btnSaveAsIcon;
         private FontAwesome.Sharp.IconButton btnDeleteIcon;
+        private System.Windows.Forms.Label label1;
     }
 }
 
