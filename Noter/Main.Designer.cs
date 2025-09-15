@@ -46,6 +46,7 @@
             this.btnOpenFolder = new FontAwesome.Sharp.IconButton();
             this.btnNewFile = new FontAwesome.Sharp.IconButton();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.filePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.HeaderPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -233,6 +234,7 @@
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.SidePanel.Controls.Add(this.filePanel);
             this.SidePanel.Controls.Add(this.fileEditPanel);
             this.SidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidePanel.Location = new System.Drawing.Point(0, 47);
@@ -279,6 +281,16 @@
             this.btnNewFile.Size = new System.Drawing.Size(32, 27);
             this.btnNewFile.TabIndex = 1;
             this.btnNewFile.UseVisualStyleBackColor = true;
+            // 
+            // filePanel
+            // 
+            this.filePanel.BackColor = System.Drawing.SystemColors.Desktop;
+            this.filePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filePanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.filePanel.Location = new System.Drawing.Point(0, 27);
+            this.filePanel.Name = "filePanel";
+            this.filePanel.Size = new System.Drawing.Size(254, 607);
+            this.filePanel.TabIndex = 1;
             // 
             // Main
             // 
@@ -327,6 +339,7 @@
         private FontAwesome.Sharp.IconButton btnOpenFolder;
         private FontAwesome.Sharp.IconButton btnNewFile;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
+        private System.Windows.Forms.FlowLayoutPanel filePanel;
     }
 }
 

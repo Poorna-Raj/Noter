@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -108,8 +109,28 @@ namespace Noter
             if(folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 string selectedPath = folderBrowser.SelectedPath;
-                MessageBox.Show(selectedPath);
+                
+                this.filePanel.Controls.Clear();
+                string[] mdFiles = Directory.GetFiles(selectedPath,"*.md");
+
+                if(mdFiles.Length <= 0)
+                {
+                    MessageBox.Show("No md files");
+                    return;
+                }
+
+                foreach(var file in mdFiles)
+                {
+                    var item = new FileView(file);
+                    item.onSelectedFile += Item_OnFileSelected;
+                    this.filePanel.Controls.Add(item);
+                }
             }
+        }
+
+        private void Item_OnFileSelected(object sender, string filePath)
+        {
+            this.txtMarkdown.Text = File.ReadAllText(filePath);
         }
     }
 }
