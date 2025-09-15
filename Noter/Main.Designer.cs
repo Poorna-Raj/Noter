@@ -42,6 +42,10 @@
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.ToolPanel = new System.Windows.Forms.Panel();
             this.SidePanel = new System.Windows.Forms.Panel();
+            this.fileEditPanel = new System.Windows.Forms.Panel();
+            this.btnOpenFolder = new FontAwesome.Sharp.IconButton();
+            this.btnNewFile = new FontAwesome.Sharp.IconButton();
+            this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.HeaderPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -53,6 +57,8 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
+            this.SidePanel.SuspendLayout();
+            this.fileEditPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -227,11 +233,52 @@
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.SidePanel.Controls.Add(this.fileEditPanel);
             this.SidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidePanel.Location = new System.Drawing.Point(0, 47);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(254, 634);
             this.SidePanel.TabIndex = 1;
+            // 
+            // fileEditPanel
+            // 
+            this.fileEditPanel.BackColor = System.Drawing.SystemColors.Desktop;
+            this.fileEditPanel.Controls.Add(this.btnNewFile);
+            this.fileEditPanel.Controls.Add(this.btnOpenFolder);
+            this.fileEditPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fileEditPanel.Location = new System.Drawing.Point(0, 0);
+            this.fileEditPanel.Name = "fileEditPanel";
+            this.fileEditPanel.Size = new System.Drawing.Size(254, 27);
+            this.fileEditPanel.TabIndex = 0;
+            // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.FlatAppearance.BorderSize = 0;
+            this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFolder.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnOpenFolder.IconColor = System.Drawing.Color.White;
+            this.btnOpenFolder.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOpenFolder.IconSize = 16;
+            this.btnOpenFolder.Location = new System.Drawing.Point(3, 0);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(32, 27);
+            this.btnOpenFolder.TabIndex = 0;
+            this.btnOpenFolder.UseVisualStyleBackColor = true;
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // btnNewFile
+            // 
+            this.btnNewFile.FlatAppearance.BorderSize = 0;
+            this.btnNewFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewFile.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNewFile.IconColor = System.Drawing.Color.White;
+            this.btnNewFile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNewFile.IconSize = 16;
+            this.btnNewFile.Location = new System.Drawing.Point(216, 0);
+            this.btnNewFile.Name = "btnNewFile";
+            this.btnNewFile.Size = new System.Drawing.Size(32, 27);
+            this.btnNewFile.TabIndex = 1;
+            this.btnNewFile.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -254,6 +301,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
+            this.SidePanel.ResumeLayout(false);
+            this.fileEditPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,6 +323,10 @@
         private System.Windows.Forms.Panel panel2;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView;
         private System.Windows.Forms.RichTextBox txtMarkdown;
+        private System.Windows.Forms.Panel fileEditPanel;
+        private FontAwesome.Sharp.IconButton btnOpenFolder;
+        private FontAwesome.Sharp.IconButton btnNewFile;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowser;
     }
 }
 

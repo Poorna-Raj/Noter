@@ -56,6 +56,8 @@ namespace Noter
             btnCloseIcon.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             btnMaxIcon.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             btnMinIcon.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            btnOpenFolder.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            btnNewFile.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
         }
 
         private void btnMaxIcon_Click(object sender, EventArgs e)
@@ -96,6 +98,18 @@ namespace Noter
                 </html>";
 
             webView.NavigateToString(fullHtml);
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            folderBrowser.Description = "Select a folder to save or edit Markdown files";
+            folderBrowser.ShowNewFolderButton = true;
+
+            if(folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                string selectedPath = folderBrowser.SelectedPath;
+                MessageBox.Show(selectedPath);
+            }
         }
     }
 }
