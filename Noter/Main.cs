@@ -1,4 +1,5 @@
 ﻿using Markdig;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,22 +112,8 @@ namespace Noter
             if(folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 CurrentSelectedPath = folderBrowser.SelectedPath;
-                
-                this.filePanel.Controls.Clear();
-                string[] mdFiles = Directory.GetFiles(CurrentSelectedPath, "*.md");
 
-                if(mdFiles.Length <= 0)
-                {
-                    MessageBox.Show("No md files");
-                    return;
-                }
-
-                foreach(var file in mdFiles)
-                {
-                    var item = new FileView(file);
-                    item.onSelectedFile += Item_OnFileSelected;
-                    this.filePanel.Controls.Add(item);
-                }
+                updateFileItems();
             }
         }
 
@@ -143,7 +130,50 @@ namespace Noter
                 return;
             }
 
-            MessageBox.Show(CurrentSelectedPath);
+            string fileName = Interaction.InputBox("Enter new Markdown file name:",
+                                           "New File",
+                                           "Untitled.md");
+
+            if (string.IsNullOrEmpty(fileName))
+            {
+                return;
+            }
+
+            if (!fileName.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
+            {
+                fileName += ".md";
+            }
+
+            string newFilePath = Path.Combine(CurrentSelectedPath, fileName);
+
+            if (File.Exists(newFilePath))
+            {
+                MessageBox.Show("File already exists. Please choose another name.");
+                return;
+            }
+
+            File.WriteAllText(newFilePath, "");
+
+            updateFileItems();
+        }
+
+        private void updateFileItems()
+        {
+            this.filePanel.Controls.Clear();
+            string[] mdFiles = Directory.GetFiles(CurrentSelectedPath, "*.md");
+
+            if (mdFiles.Length <= 0)
+            {
+                MessageBox.Show("No md files");
+                return;
+            }
+
+            foreach (var file in mdFiles)
+            {
+                var item = new FileView(file);
+                item.onSelectedFile += Item_OnFileSelected;
+                this.filePanel.Controls.Add(item);
+            }
         }
     }
 }
