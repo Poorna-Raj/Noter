@@ -84,24 +84,31 @@ namespace Noter
             string fullHtml = $@"
                 <html>
                 <head>
-                    <meta charset='utf-8'>
-                    <style>
-                        body {{
-                            font-family: Segoe UI, sans-serif;
-                            padding: 20px;
-                        }}
-                        pre, code {{
-                            background: #f4f4f4;
-                            border-radius: 5px;
-                            padding: 2px 5px;
-                        }}
-                        h1 {{ color: darkblue; }}
-                        h2 {{ color: darkgreen; }}
-                        h3 {{ color: darkred; }}
-                    </style>
+                <meta charset='utf-8'>
+                <style>
+                    body {{
+                        background-color: black; /* dark gray */
+                        color: #d4d4d4;            /* light gray text */
+                        font-family: Segoe UI, sans-serif;
+                        padding: 10px;
+                    }}
+                    pre, code {{
+                        background: #2d2d2d; /* darker block for code */
+                        color: #f8f8f2;      /* almost white text */
+                        border-radius: 5px;
+                        padding: 4px 6px;
+                        font-family: Consolas, monospace;
+                    }}
+                    h1 {{ color: #569cd6; }} /* soft blue */
+                    h2 {{ color: #4ec9b0; }} /* teal */
+                    h3 {{ color: #c586c0; }} /* purple */
+                    a  {{ color: #9cdcfe; }} /* link blue */
+                    strong {{ color: #ffd700; }} /* highlight bold */
+                </style>
                 </head>
                 <body>{html}</body>
                 </html>";
+
 
             webView.NavigateToString(fullHtml);
         }

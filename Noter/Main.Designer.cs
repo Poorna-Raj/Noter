@@ -194,7 +194,7 @@
             this.txtMarkdown.BackColor = System.Drawing.Color.Black;
             this.txtMarkdown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarkdown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMarkdown.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarkdown.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarkdown.ForeColor = System.Drawing.SystemColors.Window;
             this.txtMarkdown.Location = new System.Drawing.Point(10, 10);
             this.txtMarkdown.Name = "txtMarkdown";
