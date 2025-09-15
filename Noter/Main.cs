@@ -27,6 +27,7 @@ namespace Noter
         private const int HTCAPTION = 0x2;
 
         private string CurrentSelectedPath { get; set; } = string.Empty;
+        private string CurrentFilePath { get; set; } = string.Empty;
 
         public Main()
         {
@@ -62,6 +63,7 @@ namespace Noter
             btnMinIcon.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             btnOpenFolder.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
             btnNewFile.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            btnSaveIcon.IconChar = FontAwesome.Sharp.IconChar.Save;
         }
 
         private void btnMaxIcon_Click(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace Noter
         private void Item_OnFileSelected(object sender, string filePath)
         {
             this.txtMarkdown.Text = File.ReadAllText(filePath);
+            this.CurrentFilePath = filePath;
         }
 
         private void btnNewFile_Click(object sender, EventArgs e)
@@ -173,6 +176,26 @@ namespace Noter
                 var item = new FileView(file);
                 item.onSelectedFile += Item_OnFileSelected;
                 this.filePanel.Controls.Add(item);
+            }
+        }
+
+        private void btnSaveIcon_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(CurrentFilePath))
+            {
+                MessageBox.Show("Please open a file");
+                return;
+            }
+
+            try
+            {
+                File.WriteAllText(CurrentFilePath, txtMarkdown.Text);
+                MessageBox.Show("File Saved Successfully");
+                updateFileItems();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

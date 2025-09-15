@@ -47,6 +47,7 @@
             this.btnNewFile = new FontAwesome.Sharp.IconButton();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.filePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSaveIcon = new FontAwesome.Sharp.IconButton();
             this.HeaderPanel.SuspendLayout();
             this.utilBtnPanel.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -58,6 +59,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
+            this.ToolPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.fileEditPanel.SuspendLayout();
             this.SuspendLayout();
@@ -227,7 +229,8 @@
             // 
             // ToolPanel
             // 
-            this.ToolPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ToolPanel.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ToolPanel.Controls.Add(this.btnSaveIcon);
             this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ToolPanel.Location = new System.Drawing.Point(0, 0);
             this.ToolPanel.Name = "ToolPanel";
@@ -296,6 +299,21 @@
             this.filePanel.Size = new System.Drawing.Size(254, 607);
             this.filePanel.TabIndex = 1;
             // 
+            // btnSaveIcon
+            // 
+            this.btnSaveIcon.FlatAppearance.BorderSize = 0;
+            this.btnSaveIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveIcon.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSaveIcon.IconColor = System.Drawing.Color.White;
+            this.btnSaveIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveIcon.IconSize = 16;
+            this.btnSaveIcon.Location = new System.Drawing.Point(6, 0);
+            this.btnSaveIcon.Name = "btnSaveIcon";
+            this.btnSaveIcon.Size = new System.Drawing.Size(32, 27);
+            this.btnSaveIcon.TabIndex = 1;
+            this.btnSaveIcon.UseVisualStyleBackColor = true;
+            this.btnSaveIcon.Click += new System.EventHandler(this.btnSaveIcon_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +335,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
+            this.ToolPanel.ResumeLayout(false);
             this.SidePanel.ResumeLayout(false);
             this.fileEditPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -344,6 +363,7 @@
         private FontAwesome.Sharp.IconButton btnNewFile;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.FlowLayoutPanel filePanel;
+        private FontAwesome.Sharp.IconButton btnSaveIcon;
     }
 }
 
